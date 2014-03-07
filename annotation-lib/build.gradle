@@ -1,8 +1,8 @@
 apply plugin: 'android-library'
 apply plugin: 'maven'
 
-repositories {
-    mavenCentral()
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
 }
 
 android {
@@ -15,17 +15,6 @@ android {
         versionCode Integer.parseInt(ANDROID_VERSION_CODE)
         versionName ANDROID_VERSION_NAME
         consumerProguardFiles 'proguard-consumer.txt'
-    }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
-    }
-
-    release {
-        runProguard true
-        proguardFile getDefaultProguardFile('proguard-android-optimize.txt')
-        proguardFile 'proguard-project.txt'
     }
 }
 

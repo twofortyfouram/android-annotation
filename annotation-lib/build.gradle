@@ -16,15 +16,21 @@ android {
         versionName ANDROID_VERSION_NAME
         consumerProguardFiles 'proguard-consumer.txt'
     }
+    
+    buildTypes {
+        debug {
+            //testCoverageEnabled true
+        }
+    }
 }
 
 android.libraryVariants.all { variant ->
     task("generate${variant.name.capitalize()}Javadoc", type: Javadoc) {
         description "Generates Javadoc for $variant.name."
+        def androidHome = System.getenv('ANDROID_HOME')
         source = variant.javaCompile.source
-        ext.androidJar = "${android.plugin.sdkDirectory}/platforms/${android.compileSdkVersion}/android.jar"
-        classpath = files(variant.javaCompile.classpath.files) + files(ext.androidJar)
-        options.linksOffline('http://developer.android.com/reference/', "${android.plugin.sdkDirectory}/docs/reference")
+        classpath = files(variant.javaCompile.classpath.files) + files("${androidHome}/platforms/${android.compileSdkVersion}/android.jar")
+        options.linksOffline('http://developer.android.com/reference/', "${androidHome}/docs/reference")
     }
 }
 

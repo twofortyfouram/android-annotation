@@ -3,12 +3,17 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath group:'com.android.tools.build', name:'gradle', version:'[0.11.1,0.12['
+        classpath group:'com.android.tools.build', name:'gradle', version:'[0.13.1,0.14['
     }
 }
 
 allprojects {
     repositories {
         mavenCentral()
+    }
+    gradle.projectsEvaluated {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << '-Xlint:all'
+        }
     }
 }

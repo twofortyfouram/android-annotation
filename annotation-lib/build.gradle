@@ -1,9 +1,5 @@
-apply plugin: 'android-library'
+apply plugin: 'com.android.library'
 apply plugin: 'maven'
-
-dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
-}
 
 android {
     compileSdkVersion Integer.parseInt(ANDROID_COMPILE_SDK_VERSION)
@@ -51,9 +47,6 @@ uploadArchives {
                     }
                 }
             }
-            pom.groupId = MAVEN_GROUP
-            pom.version = ANDROID_VERSION_NAME
-            pom.artifactId = MAVEN_ARTIFACT_NAME
         }
     }
 }
@@ -64,8 +57,5 @@ task installArchives(type: Upload) {
     description "Installs artifacts to mavenLocal."
     repositories.mavenInstaller {
         configuration = configurations.default
-        pom.groupId = MAVEN_GROUP
-        pom.artifactId = MAVEN_ARTIFACT_NAME
-        pom.version = ANDROID_VERSION_NAME
     }
 }

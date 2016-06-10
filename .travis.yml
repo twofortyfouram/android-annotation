@@ -7,7 +7,7 @@ android:
     - tools
     - platform-tools
     - build-tools-23.0.3
-    - doc # Just the package-list is needed for JavaDoc task; OK to fetch the latest version here.
+    - doc # Just the package-list is needed for JavaDoc task
 
     - android-23
   licenses:

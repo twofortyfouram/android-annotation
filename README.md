@@ -1,11 +1,13 @@
-[![Build Status](https://travis-ci.org/twofortyfouram/android-annotation.png?branch=master)](https://travis-ci.org/twofortyfouram/android-annotation)
+[![CircleCI](https://circleci.com/gh/twofortyfouram/android-annotation.svg?style=svg)](https://circleci.com/gh/twofortyfouram/android-annotation)
 
 # Overview
 android-annotation-lib implements annotations to improve the documentation of Android code.
 
+Early versions of this library contained more annotations, which have been removed over time as the Android support-annotations library has grown.  Although it may seem almost useless at this point, this library is preserved to make it easy to add more annotations to our various projects in the future.
+
 
 # API Reference
-JavaDocs for the library are published [here](http://twofortyfouram.github.io/android-annotation).
+JavaDocs for the library are published [here](https://twofortyfouram.github.io/android-annotation).
 
 
 # Compatibility

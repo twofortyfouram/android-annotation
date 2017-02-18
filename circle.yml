@@ -32,9 +32,8 @@ dependencies:
 
 test:
   override:
-    - ./gradlew assemble lint findbugs releaseJavadoc dependencyUpdates --profile
+    - ./gradlew assemble lint findbugs releaseJavadoc --profile
 
 
     - cp -r build/reports/profile $CIRCLE_ARTIFACTS
-    - cp -r build/dependencyUpdates $CIRCLE_ARTIFACTS
     - cp -r annotationLib/build/outputs $CIRCLE_ARTIFACTS

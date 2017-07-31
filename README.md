@@ -1,7 +1,7 @@
 [![CircleCI](https://circleci.com/gh/twofortyfouram/android-annotation.svg?style=svg)](https://circleci.com/gh/twofortyfouram/android-annotation)
 
 # Overview
-android-annotation-lib implements annotations to improve the documentation of Android code.
+android-annotation implements annotations to improve the documentation of Android code.
 
 Early versions of this library contained more annotations, which have been removed over time as the Android support-annotations library has grown.  Although it may seem almost useless at this point, this library is preserved to make it easy to add more annotations to our various projects in the future.
 
@@ -27,7 +27,7 @@ The build.gradle repositories section would look something like the following:
 And the dependencies section would look something like this:
     
     dependencies {
-        compile group:'com.twofortyfouram', name:'android-annotation', version:'[2.0.1,3.0['
+        compile group:'com.twofortyfouram', name:'android-annotation', version:'[3.0.0,4.0['
     }
 
 
@@ -36,3 +36,4 @@ And the dependencies section would look something like this:
 * 1.0.2: Update Android Gradle plugin, which changed the generated BuildConfig
 * 2.0.0: Remove nullness annotations in favor of the Android support annotations
 * 2.0.1: Reupload artifacts with source and JavaDoc for inclusion in jCenter
+* 3.0.0: Remove VisibleForTesting anotation in favor of the Android support annotations
